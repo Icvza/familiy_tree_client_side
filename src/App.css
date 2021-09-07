@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+
+#Member_card {
+  width: 600
+  x;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+  float: left;
+}
+
+#mem_wrapper {
+  width: 300px;
+  border: 15px solid rgb(59, 22, 223);
+  padding: 50px;
+  margin: 20px;
+  float: left;
+}

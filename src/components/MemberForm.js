@@ -19,12 +19,17 @@ class MemberForm extends Component{
                 [name]: value
             }
         )
-
     }
 
     handleSubmit = e => {
         e.preventDefault()
         this.props.addMember(this.state)
+        this.setState({
+            first_name: '',
+            last_name: '',
+            age: '',
+        }
+        )
     }
 
     render(){
@@ -43,6 +48,12 @@ class MemberForm extends Component{
 
             <label> age: </label>
             <input type='integer' value={this.state.age} onChange={this.handleChange} name='age'/>
+
+            <br/>
+
+            <label> relationship: </label>
+            <input type='text' value={this.state.relationship} onChange={this.handleChange} name='relationship'/>
+
 
             <input type='submit' value='create member'/>
 

@@ -8,7 +8,6 @@ export const fetchMembers = () => {
 }
 
 
-
 export const addMember = (member) => {
     return dispatch => {
         fetch('http://127.0.0.1:3000/members', {
@@ -20,4 +19,28 @@ export const addMember = (member) => {
         .then(member => dispatch({ type: 'ADD_MEMBER', payload: member}))
     }
 }
+
+// export const deleteMember = (member) => {
+//     return dispatch => {
+//         fetch('http://127.0.0.1:3000/members/', {
+//             method: 'DELETE',
+//             body: JSON.stringify(member),
+
+//         })
+//         .then(resp => resp.json())
+//         .then(member => dispatch({ type: 'DELETE_MEMBER', payload: member}))
+//     }
+// }
+
+export const deleteMember = (member) => {
+    return (dispatch) => {
+        fetch(`http://127.0.0.1:3000/members/${member.member}` , {
+            method: "DELETE" })
+            .then(resp => resp.json())
+            .then(member=> { dispatch({ type: "DELETE_MEMBER", payload: member })
+        })
+    }
+}
+
+
 

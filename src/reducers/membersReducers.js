@@ -4,11 +4,15 @@ export function membersReducer (state = [], action){
             return action.payload
         case 'ADD_MEMBER':
             return [...state, action.payload]
+        case 'DELETE_MEMBER':
+            //debugger    
+            return state.filter( (member) => member.id !== action.payload.id)
         default: 
             return state
     }
 }
 
 
-
+//{ members: state.members.filter((member) => member.id !== action.payload)}
+//return state.filter( (member) => member.id !== action.payload.id)
 
