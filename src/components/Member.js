@@ -4,12 +4,14 @@ import { deleteMember } from '../actions/memberActions';
 
     function Member(props) {
         return (  
-            <div id='mem_wrapper'>
-                <p>{props.first_name} <br/>
-                {props.last_name}<br/>
-                {props.age}</p>
+            <div class="memebr_master">
+                <div id='mem_wrapper'>
+                    <p>{props.first_name} <br/>
+                    {props.last_name}<br/>
+                    {props.age}</p>
 
-                <button onClick={() => props.deleteMember({ type: 'DELETE_MEMBER', member: props.id })}>DELETE</button>
+                    <button onClick={() => props.deleteMember({ type: 'DELETE_MEMBER', member: props.id })}>DELETE</button>
+                </div>
             </div>
         );
         

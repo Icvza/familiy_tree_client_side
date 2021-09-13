@@ -34,30 +34,32 @@ class MemberForm extends Component{
 
     render(){
         return(
-            <form onSubmit={this.handleSubmit}>
+        <div class="login-form">
+            <form class="login-form__content" onSubmit={this.handleSubmit}>
 
-            <label> Fist Name: </label>
+            <label class="login-form__input" > Fist Name: </label>
             <input type='text' value={this.state.first_name} onChange={this.handleChange} name='first_name'/> 
 
             <br/>
 
-            <label> Last Name: </label>
+            <label class="login-form__input" > Last Name: </label>
             <input type='text' value={this.state.last_name} onChange={this.handleChange} name='last_name'/>
 
             <br/>
 
-            <label> age: </label>
+            <label class="login-form__input" > age: </label>
             <input type='integer' value={this.state.age} onChange={this.handleChange} name='age'/>
 
             <br/>
 
-            <label> relationship: </label>
+            <label class="login-form__input" > relationship: </label>
             <input type='text' value={this.state.relationship} onChange={this.handleChange} name='relationship'/>
 
 
-            <input type='submit' value='create member'/>
+            <input class="login-form__button" type='submit' value='create member'/>
 
             </form>
+        </div>
         )
     }
 }
